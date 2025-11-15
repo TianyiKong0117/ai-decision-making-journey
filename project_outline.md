@@ -35,6 +35,7 @@ For each movie, ChatGPT will be given:
 - Short plot summary
 - Genre
 - Actors
+
 And ChatGPT will output:
 - Predicting rating (1-5)
 - Reasoning
