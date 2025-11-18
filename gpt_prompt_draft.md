@@ -16,6 +16,18 @@ GPT must respond in the following JSON format:
 - `confidence`: an integer 1–5  
 - `reasoning`: 1–2 sentences only  
 
+## Restrictions
+To ensure consistency and valid evaluation, GPT must follow these strict rules:
+
+1. **Do NOT search for external information.**
+2. **Do NOT recall or reference actual Douban ratings.**
+3. **Do NOT output anything except the required JSON object.**
+4. **Reasoning must be 1–2 sentences only** (no long explanations, no bullet points).
+5. **Numbers must be integers between 1–5.**
+6. **No extra text before or after the JSON block.**
+7. **No commentary, disclaimers, or formatting outside of JSON.**
+8. **If unsure, GPT must still output a forced best guess (no “cannot determine”).**
+
 ## Prompt Template
 
 You will be given basic information about a movie.  
