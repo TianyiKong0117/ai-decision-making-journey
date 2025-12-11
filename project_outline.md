@@ -30,7 +30,7 @@ Douban
   - Country
   - Short English summary
 - Each participant will provide:
-  - Predicted rating (1-5）
+  - Predicted rating (1-5, one decimal）
   - Confidence level (1-5)
 
 ## 5. LLM Prediction Plan
@@ -43,7 +43,7 @@ For each movie, the LLM receives:
 - Short English summary
 
 The LLM outputs:
-- A single predicted rating (1-5)
+- A single predicted rating (1-5, one decimal)
 
 LLM Prompt:
 You will estimate the expected Douban rating of a movie.
@@ -57,8 +57,8 @@ Country/Region: {Country}
 Summary: {1–2 sentence summary}
 ---
 
-Please output only one number (1-5).
-For example: 4
+Please output only one number (1-5, one decimal).
+For example: 4.6
 
 ## 6. Aggregation Method
 Accuracy Metric：
