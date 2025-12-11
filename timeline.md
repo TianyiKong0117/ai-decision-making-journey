@@ -1,6 +1,6 @@
 This document records the evolution of the project — ideas, pivots, design upgrades, and lessons learned.
-## 2025-11-15 — Initial Project Outline Created
-# What Was Defined
+# 2025-11-15 — Initial Project Outline Created
+## What Was Defined
 - First attempt to build an AI-assisted decision-making project
 - Four prediction methods:
   - Individual human
@@ -14,25 +14,25 @@ This document records the evolution of the project — ideas, pivots, design upg
 - Hybrid linear regression
 - Embedding-based exploration
 
-# Status
+## Status
 - Project outline created
 - Movie list created (initial version)
 
-## 2025-11-18 - Early Drafts & Explorations
-# Progress
+# 2025-11-18 - Early Drafts & Explorations
+## Progress
 - Drafted human survey
 - Drafted early GPT prompts
 - Mixed-language movie titles still used
 - GPT not restricted (risk of retrieving real ratings)
 - Human vs AI input not standardized
 
-# Key Issues Identified
+## Key Issues Identified
 - GPT might “know” real ratings
 - Multilingual titles could introduce LLM bias
 - Humans see only English titles but GPT has multilingual titles
 
-## 2025-12-11 - Major Methodological Upgrade
-# 1. Standardize All Movie Inputs to English
+# 2025-12-11 - Major Methodological Upgrade
+## 1. Standardize All Movie Inputs to English
 To ensure fairness between human participants and AI:
 - English title
 - English summary
@@ -43,14 +43,14 @@ Reason
 - Multilingual titles may bias LLM predictions
 - Humans only receive English → AI should match that
 
-# 2. Switch to Offline / No-Internet LLM
+## 2. Switch to Offline / No-Internet LLM
 New rule for AI predictions:
 - Must use a purely local/offline model
 - No browsing capability
 - No external retrieval
 - Must rely solely on the given movie info
 
-# 3. New Standardized GPT Input Template
+## 3. New Standardized GPT Input Template
 GPT receives exactly:
 - Title (English)
 - Year
@@ -59,7 +59,7 @@ GPT receives exactly:
 And outputs:
 A single predicted rating (0–10, one decimal)
 
-# 4. New To-do Items Generated
+## 4. New To-do Items Generated
 - Rewrite human survey with standardized English format
 - Prepare offline model prediction for all movies
 - Create a CSV dataset for storing:
