@@ -1,3 +1,5 @@
+**This project is being actively updated — see timeline.md for latest methodological changes.**
+
 # AI-assisted Crowd Prediction - Movie Rating Project
 
 Goal: Build my first AI-assisted decision-making mini project within 3 weeks.
