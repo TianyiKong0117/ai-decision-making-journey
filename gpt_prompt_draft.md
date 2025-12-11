@@ -1,46 +1,48 @@
-# GPT Prediction Prompt – Draft
+# Offline LLM Prediction Prompt – Draft (Updated)
 
 ## Goal
-Generate a predicted Douban rating (1–5) for each movie based only on the information provided, plus a confidence level and brief reasoning.
+Generate a predicted Douban rating **(1-5, one decimal)** for each movie based *only* on the information provided.
 
-## Format Requirements
-GPT must respond in the following JSON format:
+The model is **offline / no-internet**, so the prompt must prevent use of memorized or retrieved real ratings.
 
-{
-  "predicted_rating": X,
-  "confidence": X,
-  "reasoning": "..."
-}
+## Output Requirements
+The LLM must output **one single number** only:
+Example:
+4.6
 
-- `predicted_rating`: an integer 1–5  
-- `confidence`: an integer 1–5  
-- `reasoning`: 1–2 sentences only  
+Rules:
+- Output must be **1-5**, with **one decimal place** (e.g., 3.3, 4.0).
+- **No text, no JSON, no explanations**, no confidence score.
+- No commentary before or after the number.
+
+---
 
 ## Restrictions
-To ensure consistency and valid evaluation, GPT must follow these strict rules:
 
-1. **Do NOT search for external information.**
-2. **Do NOT recall or reference actual Douban ratings.**
-3. **Do NOT output anything except the required JSON object.**
-4. **Reasoning must be 1–2 sentences only** (no long explanations, no bullet points).
-5. **Numbers must be integers between 1–5.**
-6. **No extra text before or after the JSON block.**
-7. **No commentary, disclaimers, or formatting outside of JSON.**
-8. **If unsure, GPT must still output a forced best guess (no “cannot determine”).**
+To ensure fairness between human and AI predictions:
 
-## Prompt Template
+- Do **NOT** search for external information.
+- Do **NOT** recall or reference known Douban ratings.
+- Do **NOT** reference training data.
+- Use **only** the information given (title, year, country, summary).
 
-You will be given basic information about a movie.  
-Using only this information, predict what rating this movie would receive on Douban (1–5) and provide a confidence score (1–5).
+If uncertain, the model must still make its **best guess**.
 
-Do **not** search for external information or refer to real Douban records.
+---
 
-Here is the movie information:
+## Standardized Input Template
 
-Title: {{title}}  
-Year: {{year}}  
-Short plot summary: {{summary}}  
-Genre: {{genre}}  
-Actors: {{actors}}
+You will be given basic information about a movie.
 
-Now output your prediction in the required JSON format.
+Using *only* this information, estimate what rating this movie would receive on Douban (1-5 scale, one decimal).
+
+Do **not** search externally, and do **not** recall actual Douban ratings.
+
+Movie Information:
+- **Title:** {{title_en}}
+- **Year:** {{year}}
+- **Country:** {{country}}
+- **Short Summary (English):** {{summary}}
+
+Now output **a single predicted rating (1-5, one decimal)** and nothing else.
+
