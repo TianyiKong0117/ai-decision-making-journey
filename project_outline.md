@@ -3,56 +3,72 @@
 Which method predicts movie ratings more accurately?
 - Individual humans
 - Crowd average
-- GPT prediction
-- A simple aggregation of crowd + GPT
+- Offline LLM prediction
+- Hybrid (crowd + LLM weighted)
 
 ## 2. Target Platform for Ground Truth
 Douban
 
 ## 3. Movie List
-- 抓娃娃 (2024)
-- 走走停停 (2024)
-- 年会不能停 (2023)
-- 九龍城寨之圍城 (2024)
+- Successor (2024)
+- G for Gap (2024)
+- Johnny Keep Walking! (2023)
+- Twilight of the Warriors: Walled In (2024)
 - Fly me to the moon (2024)
-- 青春18×2 君へと続く道 (2024)
-- 从21世纪安全撤离 (2024)
+- 18x2 Beyond Youthful Days (2024)
+- Evacuate from the 21st Century (2024)
 - Wonka (2023)
--  ルックバック (2024)
-- Maharaja (2024)
-- 소풍 (2023)
+- Look Back (2024)
+- What Goes Around Comes Around (2024)
+- Picnic (2023)
 
 ## 4. Human Prediction Plan
 - Recruit: aim for 15 participants
-- Each person will provide:
+- Each participant receives English-only info package:
+  - English title
+  - Year
+  - Country
+  - Short English summary
+- Each participant will provide:
   - Predicted rating (1-5）
   - Confidence level (1-5)
 
-## 5. ChatGPT Prediction Plan
-For each movie, ChatGPT will be given:
-- Tittle
-- Year
-- Short plot summary
-- Genre
-- Actors
+## 5. LLM Prediction Plan
+Prediction model: Offline / no-internet LLM (to avoid retrieval of true ratings)
 
-And ChatGPT will output:
-- Predicting rating (1-5)
-- Reasoning
-- Confidence level (1-5)
+For each movie, the LLM receives:
+- English title
+- Year
+- Country/Region
+- Short English summary
+
+The LLM outputs:
+- A single predicted rating (1-5)
+
+LLM Prompt:
+You will estimate the expected Douban rating of a movie.
+Please do NOT search for real data and do NOT base your answer on memorized rating numbers.
+Only use the information below.
+
+---
+Title: {English title}
+Year: {Year}
+Country/Region: {Country}
+Summary: {1–2 sentence summary}
+---
+
+Please output only one number (1-5).
+For example: 4
 
 ## 6. Aggregation Method
-- Accuracy Metrics
-  - Mean Absolute Error (MAE)
-- Hybrid Aggregation Method
-  - Human crowd average
-  - GPT predicted rating
-  - Final prediction = (human_weighted + GPT_pred) / 2
-
-## 7. Deliverables for Week 1
-- One file defining this outline (this file) (completed)
-- A draft of the human survey
-- A draft of the GPT prompt
-- A movie list (completed)
-
+Accuracy Metric：
+- Mean Absolute Error (MAE)
+Method Compared:
+- Individual Human Prediction
+- Crowd Average
+- Offline LLM Prediction
+- Hybrid Aggregation (learned weights)
+  - fit a simple linear regression model
+  - The coefficients represent the optimal weights
+  - Final prediction = weighted combination learned from regression
   
