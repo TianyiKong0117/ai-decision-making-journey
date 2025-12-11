@@ -37,7 +37,7 @@ To ensure fairness between human participants and AI:
 - English title
 - English summary
 - Year, region unified
-- Rating scale standardized (0–10, one decimal)
+- Rating scale standardized (1-5, one decimal)
 
 Reason
 - Multilingual titles may bias LLM predictions
@@ -57,7 +57,7 @@ GPT receives exactly:
 - Country/Region
 - Short Summary (English)
 And outputs:
-A single predicted rating (0–10, one decimal)
+A single predicted rating (1-5, decimal)
 
 ## 4. New To-do Items Generated
 - Rewrite human survey with standardized English format
