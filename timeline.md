@@ -57,7 +57,7 @@ GPT receives exactly:
 - Country/Region
 - Short Summary (English)
 And outputs:
-A single predicted rating (1-5, decimal)
+A single predicted rating (1-5, one decimal)
 
 ## 4. New To-do Items Generated
 - Rewrite human survey with standardized English format
