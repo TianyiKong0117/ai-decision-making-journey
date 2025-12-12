@@ -1,7 +1,7 @@
 # Offline LLM Prediction Prompt – Draft (Updated)
 
 ## Goal
-Generate a predicted Douban rating **(1-5, one decimal)** for each movie based *only* on the information provided.
+Generate a predicted Douban rating **(1-10, one decimal)** for each movie based *only* on the information provided.
 
 The model is **offline / no-internet**, so the prompt must prevent use of memorized or retrieved real ratings.
 
@@ -13,7 +13,7 @@ Example:
 4.6
 
 Rules:
-- Output must be **1-5**, with **one decimal place** (e.g., 3.3, 4.0).
+- Output must be **1-10**, with **one decimal place** (e.g., 7.3, 6.0).
 - **No text, no JSON, no explanations**, no confidence score.
 - No commentary before or after the number.
 
@@ -39,8 +39,8 @@ Estimate what rating a movie would receive on Douban, using ONLY the information
 
 Output rules:
 - Output ONE number only.
-- The number must be between 1.0 and 5.0.
-- Use exactly ONE decimal place (e.g., 3.3, 4.0).
+- The number must be between 1.0 and 10.0.
+- Use exactly ONE decimal place (e.g., 3.8, 7.0).
 - No text, no explanation, no JSON.
 
 Restrictions:
@@ -57,4 +57,4 @@ Actors: {{actors}}
 Country/Region: {{country_region}}
 Short Summary (English): {{summary}}
 
-Now output a single predicted rating (1–5, one decimal) and nothing else.
+Now output a single predicted rating (1–10, one decimal) and nothing else.
