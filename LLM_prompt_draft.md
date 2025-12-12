@@ -34,19 +34,32 @@ If uncertain, the model must still make its **best guess**.
 
 ## Standardized Input Template
 
-You will be given basic information about a movie.
+You are an offline language model running locally on my machine via Ollama (no internet access).
 
-Using *only* this information, estimate what rating this movie would receive on Douban (1-5 scale, one decimal).
+Your task:
+Estimate what rating a movie would receive on Douban, using ONLY the information I provide.
 
-Do **not** search externally, and do **not** recall actual Douban ratings.
+Output rules (very important):
+- Output ONE number only.
+- The number must be between 1.0 and 5.0 (inclusive).
+- Use exactly ONE decimal place (e.g., 3.3, 4.0, 4.6).
+- Do NOT output any text, explanation, JSON, or confidence score.
+- No extra spaces, no units, no commentary. Just the number.
 
-Movie Information:
-- **Title:** {{title_en}}
-- **Year:** {{year}}
-- **Genre:** {{genre}}
-- **Actors:** {{actor}}
-- **Country:** {{country}}
-- **Short Summary (English):** {{summary}}
+Restrictions:
+- Do NOT search for external information.
+- Do NOT recall or reference any known Douban ratings.
+- Do NOT mention training data.
+- Use only the information given below (title, year, genre, actors, country, summary).
+- If you are uncertain, still make your best guess.
 
-Now output **a single predicted rating (1-5, one decimal)** and nothing else.
+Movie information:
+Title: {{title_en}}
+Year: {{year}}
+Genre: {{genre}}
+Actors: {{actors}}
+Country/Region: {{country_region}}
+Short Summary (English): {{summary}}
+
+Now output a single predicted rating (1–5, one decimal) and nothing else.
 
