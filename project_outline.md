@@ -27,8 +27,10 @@ Douban
 - Each participant receives English-only info package:
   - English title
   - Year
-  - Country
   - Short English summary
+  - Genre
+  - Actor
+  - Country
 - Each participant will provide:
   - Predicted rating (1-5, one decimal）
   - Confidence level (1-5)
