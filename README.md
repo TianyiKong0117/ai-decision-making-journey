@@ -2,7 +2,7 @@
 
 # AI-assisted Crowd Prediction - Movie Rating Project
 
-Goal: Build my first AI-assisted decision-making mini project within 3 weeks.
+Goal: Build my first AI-assisted decision-making mini project.
 
 I am starting from a fundamental level in coding and applied AI work.  
 This repository will record every step of the process, **including failures and ugly drafts**.
