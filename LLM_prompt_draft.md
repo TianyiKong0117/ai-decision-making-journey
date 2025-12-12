@@ -41,6 +41,8 @@ Do **not** search externally, and do **not** recall actual Douban ratings.
 Movie Information:
 - **Title:** {{title_en}}
 - **Year:** {{year}}
+- **Genre:** {{genre}}
+- **Actors:** {{actor}}
 - **Country:** {{country}}
 - **Short Summary (English):** {{summary}}
 
