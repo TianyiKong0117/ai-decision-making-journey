@@ -5,6 +5,7 @@ This document records the evolution of the project — ideas, pivots, design upg
 To ensure fairness between human participants and AI:
 - English title
 - English summary
+- Actors
 - Year, region unified
 - Rating scale standardized (1-5, one decimal)
 
