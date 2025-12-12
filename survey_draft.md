@@ -3,14 +3,14 @@
 ## 1. Instructions for Participants
 For each movie listed below:
 - Read the provided information (English title, year, genre, actors, country/region, short plot summary)
-- Predict the movie’s Douban rating on a **1–5 scale, one decimal**
-- Rate your confidence in your prediction (1–5)
+- Predict the movie’s Douban rating on a **1–10 scale, one decimal**
+- Rate your confidence in your prediction (1–10)
 
 ## 2. Questions for Each Movie
 For each movie:
-1. **Predicted Rating (1–5, one decimal):**  
+1. **Predicted Rating (1–10, one decimal):**  
 What do you think this movie’s Douban rating is?
-2. **Confidence Level (1–5):**  
+2. **Confidence Level (1–10):**  
 How confident are you in your prediction?
 3. **Have you watched this movie? (Yes/No)**
 
