@@ -36,7 +36,7 @@ Douban
   - Confidence level (1-5)
 
 ## 5. LLM Prediction Plan
-Prediction model: Offline / no-internet LLM (to avoid retrieval of true ratings)
+Prediction model: qwen3:8b running via Ollama (Mac local, offline / no internet)
 
 For each movie, the LLM receives:
 - English title
