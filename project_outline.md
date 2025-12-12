@@ -32,8 +32,8 @@ Douban
   - Actor
   - Country
 - Each participant will provide:
-  - Predicted rating (1-5, one decimal）
-  - Confidence level (1-5)
+  - Predicted rating (1-10, one decimal）
+  - Confidence level (1-10)
 
 ## 5. LLM Prediction Plan
 Prediction model: qwen3:8b running via Ollama (Mac local, offline / no internet)
@@ -45,21 +45,34 @@ For each movie, the LLM receives:
 - Short English summary
 
 The LLM outputs:
-- A single predicted rating (1-5, one decimal)
+- A single predicted rating (1-10, one decimal)
 
 LLM Prompt:
-You will estimate the expected Douban rating of a movie.
-Please do NOT search for real data and do NOT base your answer on memorized rating numbers.
-Only use the information below.
+Your task:
+Estimate what rating a movie would receive on Douban, using ONLY the information I provide.
 
----
+Output rules:
+Output ONE number only.
+The number must be between 1.0 and 5.0.
+Use exactly ONE decimal place (e.g., 3.3, 4.0).
+No text, no explanation, no JSON.
+
+Restrictions:
+Do NOT search for external information.
+Do NOT recall or reference known Douban ratings.
+Do NOT mention training data.
+Use only the information given.
+
+Movie information:
 Title: {English title}
 Year: {Year}
+Genre: {Genre}
+Actors: {Actor}
 Country/Region: {Country}
 Summary: {1–2 sentence summary}
----
 
-Please output only one number (1-5, one decimal).
+
+Please output only one number (1-10, one decimal).
 For example: 4.6
 
 ## 6. Aggregation Method
