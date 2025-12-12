@@ -21,6 +21,7 @@ Douban
 - Look Back (2024)
 - What Goes Around Comes Around (2024)
 - Picnic (2023)
+- The Roses (2025)
 
 ## 4. Human Prediction Plan
 - Recruit: aim for 15 participants
