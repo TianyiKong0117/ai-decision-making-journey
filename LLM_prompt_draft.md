@@ -5,6 +5,8 @@ Generate a predicted Douban rating **(1-5, one decimal)** for each movie based *
 
 The model is **offline / no-internet**, so the prompt must prevent use of memorized or retrieved real ratings.
 
+The offline model used in this project is qwen3:8b, running locally through Ollama (Mac, no internet access).
+
 ## Output Requirements
 The LLM must output **one single number** only:
 Example:
