@@ -2,7 +2,7 @@
 
 ## 1. Instructions for Participants
 For each movie listed below:
-- Read the provided information (English title, year, country/region, short plot summary)
+- Read the provided information (English title, year, genre, actors, country/region, short plot summary)
 - Predict the movie’s Douban rating on a **1–5 scale, one decimal**
 - Rate your confidence in your prediction (1–5)
 
