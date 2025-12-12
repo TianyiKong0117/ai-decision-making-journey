@@ -12,7 +12,7 @@ Use both human crowd predictions and LLM predictions to estimate movie ratings o
 
 - Single individual predictions  
 - Simple crowd average  
-- GPT's prediction  
+- LLM's prediction  
 - A simple aggregation of crowd + LLM  
 
 to see which method is closest to the actual rating.
